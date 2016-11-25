@@ -1,4 +1,4 @@
-package fr.flegac.experiments.tiling;
+package fr.flegac.experiments.tiling.tiling;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package fr.flegac.experiments.tiling;
+package fr.flegac.experiments.tiling.solver;
 
 import org.junit.Assert;
 import org.junit.Test;

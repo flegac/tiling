@@ -3,13 +3,10 @@ package fr.flegac.experiments.tiling.grid;
 import org.junit.Assert;
 import org.junit.Test;
 
-import fr.flegac.experiments.tiling.grid.Grid;
-import fr.flegac.experiments.tiling.grid.Grid1;
-
-public class TestGrid {
+public class GridShould {
 
     @Test
-    public void checkGridSize() {
+    public void haveWidthAndHeight() {
         // given
         final int W = 12;
         final int H = 32;
@@ -21,7 +18,7 @@ public class TestGrid {
     }
 
     @Test
-    public void checkGridCoordinateSystem() {
+    public void convertCellCoordinatesToUniqueID() {
         // given
         final Grid grid = new Grid1(20, 20);
 
@@ -38,7 +35,7 @@ public class TestGrid {
     }
 
     @Test
-    public void checkGridContains() {
+    public void containsSomeCells() {
         // given
         final int w = 12;
         final int h = 14;
@@ -55,7 +52,7 @@ public class TestGrid {
     }
 
     @Test
-    public void checkGridArea() {
+    public void computeAreaFromWidthAndHeight() {
         // given
         final int h = 12;
         final int w = 15;

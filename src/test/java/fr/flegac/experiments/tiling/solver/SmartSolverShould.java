@@ -3,15 +3,12 @@ package fr.flegac.experiments.tiling.solver;
 import org.junit.Assert;
 import org.junit.Test;
 
-import fr.flegac.experiments.tiling.solver.DumbTilingSolver;
-import fr.flegac.experiments.tiling.solver.SmartTilingSolver;
-import fr.flegac.experiments.tiling.solver.TilingSolver;
 import fr.flegac.experiments.tiling.tiling.Tiling;
 
-public class TestTilingSolver {
+public class SmartSolverShould {
 
     @Test
-    public void checkSuccess() {
+    public void successForGrid_3_4() {
         // given
         final int N = 100000;
         final TilingSolver algorithm = new SmartTilingSolver(3, 4);
@@ -24,10 +21,10 @@ public class TestTilingSolver {
     }
 
     @Test
-    public void checkFailure() {
+    public void failForOddNumberOfCells() {
         // given
         final int N = 100000;
-        final TilingSolver algorithm = new DumbTilingSolver(1, 1);
+        final TilingSolver algorithm = new SmartTilingSolver(1, 1);
 
         // when
         final Tiling tiling = algorithm.solve(N);
@@ -37,7 +34,7 @@ public class TestTilingSolver {
     }
 
     @Test
-    public void checkBigTiling() {
+    public void successForBigGrid() {
         // given
         final int N = 1000000;
         final int W = 18;

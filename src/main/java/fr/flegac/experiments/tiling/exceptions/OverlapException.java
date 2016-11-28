@@ -1,4 +1,4 @@
-package fr.flegac.experiments.tiling.tiling.exceptions;
+package fr.flegac.experiments.tiling.exceptions;
 
 public class OverlapException extends RuntimeException {
 

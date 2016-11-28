@@ -7,10 +7,10 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
 import fr.flegac.experiments.tiling.tiling.TileDirection;
 import fr.flegac.experiments.tiling.tiling.Tiling;
 import fr.flegac.experiments.tiling.tiling.Tiling1;
-import fr.flegac.experiments.tiling.tiling.exceptions.OutOfBoundException;
 
 public abstract class AbstractTilingSolver implements TilingSolver {
     private final Tiling tiling;

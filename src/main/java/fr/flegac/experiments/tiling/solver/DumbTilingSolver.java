@@ -1,9 +1,9 @@
 package fr.flegac.experiments.tiling.solver;
 
+import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
+import fr.flegac.experiments.tiling.exceptions.OverlapException;
 import fr.flegac.experiments.tiling.tiling.TileDirection;
 import fr.flegac.experiments.tiling.tiling.Tiling;
-import fr.flegac.experiments.tiling.tiling.exceptions.OutOfBoundException;
-import fr.flegac.experiments.tiling.tiling.exceptions.OverlapException;
 
 public class DumbTilingSolver extends AbstractTilingSolver {
 

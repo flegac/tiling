@@ -1,6 +1,6 @@
 package fr.flegac.experiments.tiling.grid;
 
-import fr.flegac.experiments.tiling.tiling.exceptions.OutOfBoundException;
+import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
 
 public class Grid1 implements Grid {
 

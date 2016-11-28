@@ -5,8 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import fr.flegac.experiments.tiling.exceptions.OverlapException;
 import fr.flegac.experiments.tiling.grid.Grid1;
-import fr.flegac.experiments.tiling.tiling.exceptions.OverlapException;
 
 public class Tiling1 extends Grid1 implements Tiling {
     private final Map<Integer, Tile> tiles = new HashMap<>();

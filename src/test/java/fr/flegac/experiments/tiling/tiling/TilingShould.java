@@ -7,8 +7,8 @@ import java.util.Set;
 import org.junit.Assert;
 import org.junit.Test;
 
-import fr.flegac.experiments.tiling.tiling.exceptions.OutOfBoundException;
-import fr.flegac.experiments.tiling.tiling.exceptions.OverlapException;
+import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
+import fr.flegac.experiments.tiling.exceptions.OverlapException;
 
 public class TilingShould {
 

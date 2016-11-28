@@ -16,7 +16,7 @@ public class Tiling1 extends Grid1 implements Tiling {
     public Tiling1(final int w, final int h) {
         super(w, h);
         emptyCells = new HashSet<>();
-        for (int i = 0; i < getArea(); i++) {
+        for (int i = 0; i < computeArea(); i++) {
             emptyCells.add(i);
         }
     }
@@ -67,7 +67,7 @@ public class Tiling1 extends Grid1 implements Tiling {
 
     @Override
     public float computeTilingRatio() {
-        return 1f * getTiledCells().size() / getArea();
+        return 1f * getTiledCells().size() / computeArea();
     }
 
     @Override

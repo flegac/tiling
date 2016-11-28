@@ -30,8 +30,8 @@ public class TilingViewer extends Application {
         grid.setVgap(10);
         grid.setPadding(new Insets(0, 10, 0, 10));
 
-        for (int x = 0; x < tiling.getW(); x++) {
-            for (int y = 0; y < tiling.getH(); y++) {
+        for (int x = 0; x < tiling.getWidth(); x++) {
+            for (int y = 0; y < tiling.getHeight(); y++) {
                 if (tiling.getTile(tiling.cellId(x, y)) != null) {
                     grid.add(new Button("X"), x + 1, y + 1);
                 }
@@ -40,10 +40,10 @@ public class TilingViewer extends Application {
                 }
             }
         }
-        for (int x = 0; x < tiling.getW(); x++) {
+        for (int x = 0; x < tiling.getWidth(); x++) {
             grid.add(new Label("" + x), x + 1, 0);
         }
-        for (int y = 0; y < tiling.getH(); y++) {
+        for (int y = 0; y < tiling.getHeight(); y++) {
             grid.add(new Label("" + y), 0, y + 1);
         }
 

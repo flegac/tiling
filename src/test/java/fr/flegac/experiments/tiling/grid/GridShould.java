@@ -13,8 +13,8 @@ public class GridShould {
         final Grid grid = new Grid1(W, H);
 
         // then
-        Assert.assertEquals(H, grid.getH());
-        Assert.assertEquals(W, grid.getW());
+        Assert.assertEquals(H, grid.getHeight());
+        Assert.assertEquals(W, grid.getWidth());
     }
 
     @Test
@@ -22,8 +22,8 @@ public class GridShould {
         // given
         final Grid grid = new Grid1(20, 20);
 
-        for (int x = 0; x < grid.getW(); x++) {
-            for (int y = 0; y < grid.getH(); y++) {
+        for (int x = 0; x < grid.getWidth(); x++) {
+            for (int y = 0; y < grid.getHeight(); y++) {
                 // when
                 final int cellId = grid.cellId(x, y);
 
@@ -61,7 +61,7 @@ public class GridShould {
         final Grid grid = new Grid1(w, h);
 
         // then
-        Assert.assertEquals(h * w, grid.getArea());
+        Assert.assertEquals(h * w, grid.computeArea());
 
     }
 

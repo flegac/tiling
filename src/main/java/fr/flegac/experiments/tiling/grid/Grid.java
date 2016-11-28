@@ -1,13 +1,10 @@
 package fr.flegac.experiments.tiling.grid;
 
 public interface Grid {
-    int getW();
+    int getWidth();
 
-    int getH();
+    int getHeight();
 
-    /**
-     * convert cell position to unique cell ID
-     */
     int cellId(int x, int y);
 
     int computeX(int cellId);
@@ -16,5 +13,5 @@ public interface Grid {
 
     boolean contains(int cellId);
 
-    int getArea();
+    int computeArea();
 }

@@ -4,60 +4,60 @@ import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
 
 public class Grid1 implements Grid {
 
-    private final int w;
+    private final int width;
 
-    private final int h;
+    private final int height;
 
-    public Grid1(final int w, final int h) {
+    public Grid1(final int width, final int height) {
         super();
-        this.w = w;
-        this.h = h;
+        this.width = width;
+        this.height = height;
     }
 
     @Override
-    public int getW() {
-        return w;
+    public int getWidth() {
+        return width;
     }
 
     @Override
-    public int getH() {
-        return h;
+    public int getHeight() {
+        return height;
     }
 
     @Override
-    public int getArea() {
-        return w * h;
+    public int computeArea() {
+        return width * height;
     }
 
     @Override
     public int cellId(final int x, final int y) {
-        if (x < 0 || y < 0 || x >= w || y >= h) {
+        if (x < 0 || y < 0 || x >= width || y >= height) {
             throw new OutOfBoundException();
         }
-        return x + y * w;
+        return x + y * width;
     }
 
     @Override
     public int computeX(final int cellId) {
-        return cellId - w * computeY(cellId);
+        return cellId - width * computeY(cellId);
     }
 
     @Override
     public int computeY(final int cellId) {
-        return cellId / w;
+        return cellId / width;
     }
 
     @Override
     public boolean contains(final int cellId) {
-        return 0 <= cellId && cellId < w * h;
+        return 0 <= cellId && cellId < width * height;
     }
 
     @Override
     public String toString() {
         String result = "";
 
-        for (int y = h - 1; y >= 0; y--) {
-            for (int x = 0; x < w; x++) {
+        for (int y = height - 1; y >= 0; y--) {
+            for (int x = 0; x < width; x++) {
                 result += String.format("%5d", cellId(x, y));
             }
             result += "\n";

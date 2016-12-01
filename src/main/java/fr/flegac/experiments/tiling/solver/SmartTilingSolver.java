@@ -6,7 +6,6 @@ import fr.flegac.experiments.tiling.tiling.TileDirection;
 import fr.flegac.experiments.tiling.tiling.Tiling;
 
 public class SmartTilingSolver extends AbstractTilingSolver {
-
     private static final int MAX_FAILS_IN_A_ROW = 10;
 
     private int failed;
@@ -25,7 +24,6 @@ public class SmartTilingSolver extends AbstractTilingSolver {
 
         final int cellId = getRandomEmptyCell();
         final TileDirection direction = getSmartRandomDirection(cellId);
-        // final TileDirection direction = getRandomDirection();
 
         try {
             tiling.fill(cellId, direction);

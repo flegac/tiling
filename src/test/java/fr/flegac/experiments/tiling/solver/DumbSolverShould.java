@@ -1,6 +1,6 @@
 package fr.flegac.experiments.tiling.solver;
 
-import org.junit.Assert;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import fr.flegac.experiments.tiling.tiling.Tiling;
@@ -17,6 +17,6 @@ public class DumbSolverShould {
         final Tiling tiling = algorithm.solve(N);
 
         // then
-        Assert.assertFalse(tiling.getEmptyCells().isEmpty());
+        Assertions.assertThat(tiling.getEmptyCells()).isNotEmpty();
     }
 }

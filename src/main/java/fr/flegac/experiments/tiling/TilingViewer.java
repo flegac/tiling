@@ -8,6 +8,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -21,8 +22,8 @@ public class TilingViewer extends Application {
     public void start(final Stage primaryStage) {
 
         // construct tiling
-        final TilingSolver solver = new SmartTilingSolver(12, 12);
-        final Tiling tiling = solver.solve(10000);
+        final TilingSolver solver = new SmartTilingSolver(15, 16);
+        final Tiling tiling = solver.solve(1000000);
 
         // construct gridpane
         final GridPane grid = new GridPane();
@@ -47,11 +48,12 @@ public class TilingViewer extends Application {
             grid.add(new Label("" + y), 0, y + 1);
         }
 
-        final Scene scene = new Scene(grid, 500, 500);
+        // scene
+        final Scene scene = new Scene(new ScrollPane(grid), 500, 500);
 
         primaryStage.setScene(scene);
-        primaryStage.setWidth(500);
-        primaryStage.setHeight(500);
+        primaryStage.setWidth(600);
+        primaryStage.setHeight(600);
         primaryStage.setTitle("Tiling viewer");
         primaryStage.show();
 

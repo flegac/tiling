@@ -1,7 +1,9 @@
 package fr.flegac.experiments.tiling.grid;
 
-import org.junit.Assert;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
+
+import fr.flegac.experiments.tiling.exceptions.OutOfBoundException;
 
 public class GridShould {
 
@@ -13,8 +15,8 @@ public class GridShould {
         final Grid grid = new Grid1(W, H);
 
         // then
-        Assert.assertEquals(H, grid.getHeight());
-        Assert.assertEquals(W, grid.getWidth());
+        Assertions.assertThat(grid.getHeight()).isEqualTo(H);
+        Assertions.assertThat(grid.getWidth()).isEqualTo(W);
     }
 
     @Test
@@ -28,14 +30,25 @@ public class GridShould {
                 final int cellId = grid.cellId(x, y);
 
                 // then
-                Assert.assertEquals(x, grid.computeX(cellId));
-                Assert.assertEquals(y, grid.computeY(cellId));
+                Assertions.assertThat(grid.computeX(cellId)).isEqualTo(x);
+                Assertions.assertThat(grid.computeY(cellId)).isEqualTo(y);
             }
         }
     }
 
+    @Test(expected = OutOfBoundException.class)
+    public void throwExceptionWhenConvertingOutOfBoundCellCoordinatesToUniqueID() {
+        // given
+        final Grid grid = new Grid1(20, 20);
+
+        // when
+        grid.cellId(grid.getWidth(), grid.getHeight());
+
+        Assertions.shouldHaveThrown(OutOfBoundException.class);
+    }
+
     @Test
-    public void containsSomeCells() {
+    public void containsBorderCells() {
         // given
         final int w = 12;
         final int h = 14;
@@ -44,11 +57,25 @@ public class GridShould {
         final Grid grid = new Grid1(w, h);
 
         // then
-        Assert.assertFalse(grid.contains(-1));
-        Assert.assertTrue(grid.contains(0));
-        Assert.assertTrue(grid.contains(w * h - 1));
-        Assert.assertFalse(grid.contains(w * h));
-        Assert.assertFalse(grid.contains(w * h + 1));
+
+        Assertions.assertThat(grid.contains(0)).isTrue();
+        Assertions.assertThat(grid.contains(w * h - 1)).isTrue();
+    }
+
+    @Test
+    public void doesNotContainsOutsideCells() {
+        // given
+        final int w = 12;
+        final int h = 14;
+
+        // when
+        final Grid grid = new Grid1(w, h);
+
+        // then
+
+        Assertions.assertThat(grid.contains(-1)).isFalse();
+        Assertions.assertThat(grid.contains(w * h)).isFalse();
+        Assertions.assertThat(grid.contains(w * h + 1)).isFalse();
     }
 
     @Test
@@ -61,7 +88,7 @@ public class GridShould {
         final Grid grid = new Grid1(w, h);
 
         // then
-        Assert.assertEquals(h * w, grid.computeArea());
+        Assertions.assertThat(grid.computeArea()).isEqualTo(w * h);
 
     }
 

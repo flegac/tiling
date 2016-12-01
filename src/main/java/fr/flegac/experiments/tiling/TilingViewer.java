@@ -21,8 +21,8 @@ public class TilingViewer extends Application {
     public void start(final Stage primaryStage) {
 
         // construct tiling
-        final TilingSolver solver = new SmartTilingSolver(12, 12);
-        final Tiling tiling = solver.solve(10000);
+        final TilingSolver solver = new SmartTilingSolver(15, 16);
+        final Tiling tiling = solver.solve(1000000);
 
         // construct gridpane
         final GridPane grid = new GridPane();
